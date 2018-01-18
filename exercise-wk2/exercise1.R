@@ -57,14 +57,43 @@ print(CompareLength(v1, v2))
 # Write a function `DescribeDifference` that will return one of the following statements:
 # "Your first vector is longer by N elements"
 # "Your second vector is longer by N elements"
+DescribeDifference <- function(first.vector, second.vector) {
+  if(length(first.vector) > length(second.vector)) {
+    phrase <- paste("Your first vector is longer by", length(first.vector) - length(second.vector), "elements")
+    return(phrase)
+  } else {
+    phrase <- paste("Your second vector is longer by", length(second.vector) - length(first.vector), "elements")
+    return(phrase)
+  }
+}
 
 # Pass two vectors to your `DescribeDifference` function
 
+v1 <- c(1, 2, 3, 4, 5)
+v2 <- c(1, 2, 3)
+DescribeDifference(v1, v2)
 
 # Write a function `CombineVectors` that takes in 3 vectors and combines them into one
 
+CombineVectors <- function(first.vector, second.vector, third.vector) {
+  c(first.vector, second.vector, third.vector)
+}
+
 # Send 3 vectors to your function to test it.
+v1 <- c(1, 2, 3, 4, 5)
+v2 <- c(1, 2, 3)
+v3 <- c(1, 2)
+
+CombineVectors(v1, v2, v3)
 
 # Write a function `CapsTime` that takes in a vector of names of courses you're taking, ex "Informatics 201" and removes all capital letters
 
+CapsTime <- function(vector.names) {
+  vector.lowercase <- tolower(vector.names)
+  return(vector.lowercase)
+}
+
+v1 <- c("TACO TIME", "TACO BELL")
+
+CapsTime(v1)
 
